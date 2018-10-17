@@ -37,7 +37,23 @@ class DentistaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'nome'=>'required|min:3',
+            'telefone'=>'required|min:10',
+            'email'=>'required',
+            'senha'=>'required|min:6'
+
+        ]);
+
+        Dentista::create([
+            'nome'=>$request->nome,
+            'telefone'=>$request->telefone,
+            'email'=>$request->email,
+            'senha'=>$request->senha,
+        ]);
+        return redirect(route('dentista.index'));
+
+
     }
 
     /**
@@ -46,9 +62,9 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Dentista $dentista)
     {
-        //
+        return view('dentista.show',['dentista'=>$dentista]);
     }
 
     /**
@@ -57,9 +73,9 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit( Dentista $dentista)
     {
-        //
+        return view('dentista.edit',compact('dentista'));
     }
 
     /**

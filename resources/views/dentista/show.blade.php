@@ -3,9 +3,19 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Ver</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <div class="card">
+        <div class="card-header"></div>
+        <h2>{{$dentista->nome}}</h2>
+    </div>
+    <div class="card-body">
+        <p>
+            {{$dentista->telefone}}
+        </p>
+
+    </div>
+
 @stop
