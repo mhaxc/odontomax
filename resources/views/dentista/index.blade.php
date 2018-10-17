@@ -11,6 +11,7 @@
 
 <br>
 <a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success">Adicionar</button></a>
+<a href="{{route('home')}}" class=" btn btn-danger">Voltar</a>
     <div class="table-responsive-md ">
 
         <table class="table table-responsive-md">

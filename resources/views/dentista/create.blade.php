@@ -57,7 +57,7 @@
 
     <div class="form-group">
         {{ Form::submit('Adicionar', array('class' => 'btn btn-success')) }}
-
+        <a href="{{route('dentista.index')}}" class=" btn btn-danger">Voltar</a>
     </div>
     {{ Form::close() }}
 
