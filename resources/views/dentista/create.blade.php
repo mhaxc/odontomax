@@ -14,23 +14,7 @@
             @endforeach
         </div>
     @endif
-  {{--  <form action="{{route('dentista.store')}}" method="post">
-        @csrf
-        <div class="form group">
-            <label for="nome">Nome</label>
-            <input type="text" name="title" id="nome" class="form-control">
-        </div>
-
-        <div class="form group">
-            <label for="content">content</label>
-            <textarea name="content" id="content" cols="30" rows="10" class="form-control"></textarea>
-        </div>
-
-        <div class="form-control">
-            <button type="submit" class="btn btn-outline-info">ADD a Post</button>
-
-        </div>
-    </form>--}}
+ 
     {{ Form::open(['action'=>'DentistaController@store']) }}
 
         {{csrf_field()}}
@@ -48,11 +32,6 @@
     <div class="form-group">
         {{ Form::label('email', 'E-mail', array('class'=>'control-label')) }}
         {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('senha', 'Senha', array('class'=>'control-label')) }}
-        {{ Form::number('senha', null, array('placeholder'=>'Sua senha...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group">

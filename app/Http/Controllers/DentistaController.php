@@ -14,8 +14,8 @@ class DentistaController extends Controller
      */
     public function index()
     {
-        $dentistas = Dentista::orderby('nome','desc')->paginate(10);
-        return view('dentista.index',['dentistas' => $dentistas]);
+        $dentistas = Dentista::all();
+        return view('dentista.index',compact('dentistas'));
     }
 
 
@@ -41,17 +41,12 @@ class DentistaController extends Controller
             'nome'=>'required|min:3',
             'telefone'=>'required|min:10',
             'email'=>'required',
-            'senha'=>'required|min:6'
+            
 
         ]);
 
-        Dentista::create([
-            'nome'=>$request->nome,
-            'telefone'=>$request->telefone,
-            'email'=>$request->email,
-            'senha'=>$request->senha,
-        ]);
-        return redirect(route('dentista.index'));
+        Dentista::create($request->all());
+        return redirect(route('dentista.index'))->with('sucess','addicionar');
 
 
     }
@@ -64,20 +59,19 @@ class DentistaController extends Controller
      */
     public function show(Dentista $dentista)
     {
-        return view('dentista.show',['dentista'=>$dentista]);
-    }
+        return view('dentista.show',compact('dentista'));
 
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( Dentista $dentista)
+    public function edit(Dentista $dentista)
     {
         return view('dentista.edit',compact('dentista'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -85,10 +79,20 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Dentista $dentista)
     {
-        //
+        $request->validate([
+            'nome'=>'required',
+            'telefone'=> 'required|integer',
+            'email' => 'required',
+            'senha' => 'required'
+          ]);
+            
+         
+          return redirect(route('dentista.index'))->with('success', 'Stock has been updated');
     }
+    
+    
 
     /**
      * Remove the specified resource from storage.
@@ -96,8 +100,10 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dentista $dentista)
     {
-        //
+       
+        $dentista->delete();
+        return redirect(route('dentista.index'))->with('sucess','stoque has  deletar');
     }
 }
