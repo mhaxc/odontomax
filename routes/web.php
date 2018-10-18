@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/dentista','DentistaController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/dentista','DentistaController');

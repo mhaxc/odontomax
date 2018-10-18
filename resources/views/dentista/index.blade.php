@@ -9,10 +9,20 @@
 
 <br>
 <a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success">Adicionar</button></a>
-    <div class="table-responsive-md ">
 
-        <table class="table table-bordered">
+<div>
+    @if(Session::has('success'))
+        <div class=" alert alert-success"></div>
+        {{Session::get('success')}}
+
+    @endif
+</div>
+
+<div class="table ">
+
+        <table class="table table-hover">
         <thead>
+
             <tr>
                 <th>#</th>
                 <th>Nome</th>
@@ -20,11 +30,11 @@
                 <th>email</th>
                
                 <th class="text-align-center">Açoes</th>
-            </tr>
-        </thead>
-    <tbody>
 
-        @foreach($dentistas as $dentista)
+        </thead>
+        <tbody>
+
+     @foreach($dentistas as $dentista)
         <h2>
             <div class="card mt-3">
                 <div class="card body">
@@ -34,27 +44,22 @@
                     <td>{{$dentista->telefone}}</td>
                     <td>{{$dentista->email}}</td>
                    
-                <td> 
-                <form action="{{ route('dentista.destroy',$dentista->id) }}" method="POST">
-                    
-                <a href="{{ route('dentista.edit',$dentista->id)}}" class="btn btn-primary btn-sm glyphicon glyphicon-pencil">Editar</a>
-                    <a href="{{ route('dentista.show',$dentista->id)}}" class="	glyphicon glyphicon-eye-open btn btn-warning btn-sm">Ver</a> 
-                    
-                    
-                    
-                       @method('DELETE')
-                        <button type="submit" class="glyphicon glyphicon-trash btn btn-danger btn-sm">Deletar</button>
-                        </form>
-                    </td>
-                </tr>
-     </div>
-    </div>
+                <td>
 
-    </tbody>
+                    <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('dentista.show',$dentista->id)}}">Ver</a>
+                    <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}">editar</a>
+                    <a class="btn btn-info btn-sm glyphicon glyphicon-trash" href="{{ route('dentista.destroy',$dentista->id)}}">editar</a>
+
+                </td>
+                </tr>
+        </div>
+    </div>
+</h2>
+</tbody>
   
-       @endforeach
+@endforeach
     </table>
-   
+
  
     </div>
     <div class="card mt-2"></div>

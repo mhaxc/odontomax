@@ -14,7 +14,7 @@ class DentistaController extends Controller
      */
     public function index()
     {
-        $dentistas = Dentista::all();
+        $dentistas = Dentista::latest()->paginate(10);
         return view('dentista.index',compact('dentistas'));
     }
 
@@ -46,7 +46,7 @@ class DentistaController extends Controller
         ]);
 
         Dentista::create($request->all());
-        return redirect(route('dentista.index'))->with('sucess','addicionar');
+        return redirect(route('dentista.index'))->with('success','Adicionado  com Sucesso');
 
 
     }
@@ -57,8 +57,9 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Dentista $dentista)
+    public function show($id)
     {
+       $dentista=Dentista::find($id);
         return view('dentista.show',compact('dentista'));
 
     }
@@ -68,8 +69,9 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dentista $dentista)
+    public function edit($id)
     {
+        $dentista=Dentista::find($id);
         return view('dentista.edit',compact('dentista'));
     }
     /**
@@ -79,17 +81,17 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Dentista $dentista)
+    public function update(Request $request,$id)
     {
         $request->validate([
             'nome'=>'required',
-            'telefone'=> 'required|integer',
-            'email' => 'required',
-            'senha' => 'required'
+            'telefone'=> 'required|min:9',
+            'email' => 'required'
+
           ]);
             
-         
-          return redirect(route('dentista.index'))->with('success', 'Stock has been updated');
+        Dentista::find($id)->update($request->all());
+        return redirect(route('dentista.index'))->with('success','update has  deletar');
     }
     
     
@@ -100,10 +102,10 @@ class DentistaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dentista $dentista)
+    public function destroy($id)
     {
-       
-        $dentista->delete();
-        return redirect(route('dentista.index'))->with('sucess','stoque has  deletar');
+
+       Dentista::find($id)->delete();
+        return redirect(route('dentista.index'))->with('success','Deletado com  sucesso ');
     }
 }

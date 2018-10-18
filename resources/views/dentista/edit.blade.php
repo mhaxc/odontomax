@@ -16,38 +16,32 @@
             @endforeach
         </ul>
       </div><br />
-      @endif
-<div class="card uper">
-  <div class="card-header">
+  @endif
+{{ Form::model($dentista,['method'=>'PATCH','route'=>['dentista.update',$dentista]]) }}
 
-  </div>
-  <div class="card-body">
-    
-    <form action="{{ route('dentista.update', $dentista->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+        {{csrf_field()}}
 
         <div class="form-group">
-          <label for="nome"> Name:</label>
-          <input type="text" class="form-control" name="nome" value={{ $dentista->nome}} />
+            {{ Form::label('nome', 'Nome', array('class'=>'control-label')) }}
+            {{ Form::text('nome', null, array('placeholder'=>'Seu nome...', 'class'=>'form-control')) }}
         </div>
-        
-        <div class="form-group">
-          <label for="telefone">telefone</label>
-          <input type="text" class="form-control" name="telefone" value={{ $dentista->telefone }} />
-        </div>
-        
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="text" class="form-control" name="email" value={{ $dentista->email }} />
-        </div>
-        
-        
 
-        <button type="submit" class="btn btn-primary">Atualizar</button>
-      </form>
-  </div>
-</div>
+        <div class="form-group">
+            {{ Form::label('Telefone', 'Telefone', array('class'=>'control-label')) }}
+            {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('email', 'E-mail', array('class'=>'control-label')) }}
+            {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            {{ Form::submit('Atualizar', array('class' => 'btn btn-success')) }}
+            <a href="{{route('dentista.index')}}" class=" btn btn-danger">Voltar</a>
+        </div>
+{{ Form::close() }}
+
 
 
 
