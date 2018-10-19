@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'Odontomax 2',
+    'title' => 'Odontomax',
 
     'title_prefix' => '',
 
@@ -119,8 +119,15 @@ return [
             'text'        => 'Dentistas',
             'url'         => 'dentista',
             'icon'        => 'stethoscope',
-            'label'       => 4,
-            'label_color' => 'success',
+          
+           
+        ],
+        [
+            'text'        => 'Pacientes',
+            'url'         => 'paciente',
+            'icon'        => 'stethoscope',
+          
+           
         ],
         'ACCOUNT SETTINGS',
         [

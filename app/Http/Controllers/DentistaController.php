@@ -91,7 +91,7 @@ class DentistaController extends Controller
           ]);
             
         Dentista::find($id)->update($request->all());
-        return redirect(route('dentista.index'))->with('success','update has  deletar');
+        return redirect(route('dentista.index'))->with('success','Dentista Alterado com Sucesso');
     }
     
     

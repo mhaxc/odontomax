@@ -4,6 +4,7 @@
 
 @section('content_header')
     <h1 class="text-center">NOVO DENTISTA</h1>
+    
 @stop
 
 @section('content')

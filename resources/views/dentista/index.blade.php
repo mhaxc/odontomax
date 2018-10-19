@@ -12,8 +12,10 @@
 
 <div>
     @if(Session::has('success'))
-        <div class=" alert alert-success"></div>
-        {{Session::get('success')}}
+    <div class="alert alert-success" role="alert">
+    {{Session::get('success')}} 
+    </div>
+    
 
     @endif
 </div>
@@ -25,11 +27,10 @@
 
             <tr>
                 <th>#</th>
-                <th>Nome</th>
+                <th  >Nome</th>
                 <th>Telefone</th>
                 <th>email</th>
-               
-                <th class="text-align-center">Açoes</th>
+                <th>Açoes</th>
 
         </thead>
         <tbody>
@@ -43,14 +44,18 @@
                     <td>{{$dentista->nome}}</td>
                     <td>{{$dentista->telefone}}</td>
                     <td>{{$dentista->email}}</td>
-                   
+                
                 <td>
+                <form onsubmit="return confirm('deseja  realmente apagar Esse Dentista')" class ="d-inline-block" method ="post" action="{{route('dentista.destroy',$dentista->id)}}">  
+                
+                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('dentista.show',$dentista->id)}}">Ver</a>
+                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}">editar</a>    
+                    @csrf
+                  @method('DELETE')
+                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit">Delete</button>
+                </form>
+            </td>
 
-                    <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('dentista.show',$dentista->id)}}">Ver</a>
-                    <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}">editar</a>
-                    <a class="btn btn-info btn-sm glyphicon glyphicon-trash" href="{{ route('dentista.destroy',$dentista->id)}}">editar</a>
-
-                </td>
                 </tr>
         </div>
     </div>
@@ -71,7 +76,9 @@
     </div>
 
     <div class="mt-4">
-
+    
+        
+        
     </div>
 
 @stop
