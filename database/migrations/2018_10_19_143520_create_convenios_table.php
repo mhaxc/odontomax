@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDentistasTable extends Migration
+class CreateConveniosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,22 @@ class CreateDentistasTable extends Migration
      */
     public function up()
     {
-        Schema::create('dentistas', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('convenios', function (Blueprint $table) {
+            $table->increments('id_convenio');
             $table->string('nome');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('endereco');
-            $table->string('crm');
+            $table->date('data_inicio');
+            $table->string('regioes');
             $table->timestamps();
         });
     }
 
-    /**s
+    /**
      * Reverse the migrations.
      *
      * @return void
      */
-     public function down()
+    public function down()
     {
-        Schema::dropIfExists('dentistas');
+        Schema::dropIfExists('convenios');
     }
 }
