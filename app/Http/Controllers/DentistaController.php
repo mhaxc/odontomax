@@ -39,8 +39,10 @@ class DentistaController extends Controller
     {
         $this->validate($request,[
             'nome'=>'required|min:3',
-            'telefone'=>'required|min:10',
-            'email'=>'required',
+            'telefone'=>'required|min:9',
+            'email'=>'required|email',
+            'endereco'=>'required ',
+            'sigla'=>'required|min:3',
             
 
         ]);

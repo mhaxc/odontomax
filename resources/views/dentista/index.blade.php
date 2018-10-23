@@ -31,7 +31,7 @@
                 <th>Telefone</th>
                 <th>email</th>
                 <th>endereço</th>
-                <th>crm</th>
+                <th>Sigla</th>
                 <th>Açoes</th>
 
         </thead>
@@ -47,7 +47,7 @@
                     <td>{{$dentista->telefone}}</td>
                     <td>{{$dentista->email}}</td>
                     <td>{{$dentista->endereco}}</td>
-                    <td>{{$dentista->crm}}</td>
+                    <td>{{$dentista->sigla}}</td>
                 <td>
                 <form onsubmit="return confirm('deseja  realmente apagar Esse Dentista')" class ="d-inline-block" method ="post" action="{{route('dentista.destroy',$dentista->id)}}">  
                 

@@ -19,7 +19,7 @@ class CreateDentistasTable extends Migration
             $table->string('telefone');
             $table->string('email');
             $table->string('endereco');
-            $table->string('crm');
+            $table->string('sigla');
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@
           <div class="pull-left">
             <h3><a class="btn btn-success" href="{{route('dentista.index')}}">Voltar</a></h3>
 
-              <div class="table ">
+              <div class="table">
 
                   <table class="table table-hover">
                       <thead>
@@ -23,7 +23,7 @@
                           <th>Telefone</th>
                           <th>email</th>
                           <th>endereco</th>
-                          <th>crm</th>
+                          <th>Sigla</th>
                          
                           <th class="text-align-center">Açoes</th>
                       </tr>
@@ -33,7 +33,7 @@
 
 
                           <h1>
-                              <div class="">
+                              <div class="row">
                                   <div class="card body">
                                       <tr>
                                           <td>{{$dentista->id}}</td>
@@ -41,7 +41,7 @@
                                           <td>{{$dentista->telefone}}</td>
                                           <td>{{$dentista->email}}</td>
                                           <td>{{$dentista->endereco}}</td>
-                                            s<td>{{$dentista->crm}}</td>
+                                            s<td>{{$dentista->sigla}}</td>
                                           <td>
       <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}">Editar</a>
 

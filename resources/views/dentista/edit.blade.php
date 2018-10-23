@@ -41,8 +41,8 @@
         </div>
    
         <div class="form-group">
-        {{ Form::label('crm', 'CRM', array('class'=>'control-label')) }}
-        {{ Form::text('crm', null, array('placeholder'=>'Seu CRM...', 'class'=>'form-control')) }}
+        {{ Form::label('sigla', 'Sigla', array('class'=>'control-label')) }}
+        {{ Form::text('sigla', null, array('placeholder'=>'Seu sigla...', 'class'=>'form-control')) }}
         </div>
 
 
