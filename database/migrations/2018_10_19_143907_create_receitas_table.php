@@ -15,9 +15,9 @@ class CreateReceitasTable extends Migration
     {
         Schema::create('receitas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('id');
-            $table->increments('id');
-            $table->increments('id');
+           
+    
+            
             $table->timestamps();
         });
     }

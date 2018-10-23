@@ -22,7 +22,9 @@
                           <th>Nome</th>
                           <th>Telefone</th>
                           <th>email</th>
-
+                          <th>endereco</th>
+                          <th>crm</th>
+                         
                           <th class="text-align-center">Açoes</th>
                       </tr>
                       </h1>
@@ -38,7 +40,8 @@
                                           <td>{{$dentista->nome}}</td>
                                           <td>{{$dentista->telefone}}</td>
                                           <td>{{$dentista->email}}</td>
-
+                                          <td>{{$dentista->endereco}}</td>
+                                            s<td>{{$dentista->crm}}</td>
                                           <td>
       <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}">Editar</a>
 

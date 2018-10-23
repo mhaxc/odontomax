@@ -14,10 +14,7 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->increments('id_paciente');
-            $table->foreign('id_convenio')->references('id')->on('convenio');
-            $table->foreign('id_laudo')->references('id')->on('laudo');
-            $table->foreign('id_prontuario')->references('id')->on('prontuario');
+            $table->increments('id');
             $table->integer('cpf')->unique();
             $table->integer('rg')->unique();
             $table->string('nome_pai');

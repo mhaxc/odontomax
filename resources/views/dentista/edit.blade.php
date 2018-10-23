@@ -35,6 +35,17 @@
             {{ Form::label('email', 'E-mail', array('class'=>'control-label')) }}
             {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
         </div>
+        <div class="form-group">
+        {{ Form::label('endereco', 'Endereco', array('class'=>'control-label')) }}
+        {{ Form::text('endereco', null, array('placeholder'=>'Seu endereco...', 'class'=>'form-control')) }}
+        </div>
+   
+        <div class="form-group">
+        {{ Form::label('crm', 'CRM', array('class'=>'control-label')) }}
+        {{ Form::text('crm', null, array('placeholder'=>'Seu CRM...', 'class'=>'form-control')) }}
+        </div>
+
+
 
         <div class="form-group">
             {{ Form::submit('Atualizar', array('class' => 'btn btn-success')) }}
