@@ -18,6 +18,10 @@ class CreateConsultasTable extends Migration
             $table->date('data_consulta');
             $table->time('horario');
             $table->string('tipo');
+            $table->integer('dentista_id')->unsigned();
+            $table->integer('paciente_id')->unsigned();
+            $table->foreign('paciente_id')->references('id')->on('pacientes');
+            $table->foreign('dentista_id')->references('id')->on('dentistas');
             $table->timestamps();
         });
     }

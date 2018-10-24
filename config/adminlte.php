@@ -109,6 +109,7 @@ return [
 
     'menu' => [
             'DASHBOARD',
+
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
@@ -116,30 +117,41 @@ return [
         ],
 
         [
+            'text'        => 'Agenda',
+            'url'         => 'agenda',
+            'icon'        => 'calendar',
+
+
+        ],
+
+        [
             'text'        => 'Dentistas',
             'url'         => 'dentista',
-            'icon'        => 'stethoscope',
+            'icon'        => ' fa-user-md',
           
            
         ],
+
         [
             'text'        => 'Pacientes',
             'url'         => 'paciente',
-            'icon'        => 'stethoscope',
+            'icon'        => 'user',
           
            
         ],
-        'ACCOUNT SETTINGS',
+
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
+            'text' => 'Consulta',
+            'url'  => 'consulta',
+            'icon' => 'plus-square',
         ],
         [
             'text' => 'Change Password',
             'url'  => 'admin/settings',
             'icon' => 'lock',
         ],
+
+        'AREA FINANCEIRA',
         [
             'text'    => 'Multilevel',
             'icon'    => 'share',
@@ -177,19 +189,6 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
         ],
     ],
 
