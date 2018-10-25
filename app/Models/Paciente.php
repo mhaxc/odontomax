@@ -11,7 +11,7 @@ class Paciente extends Model
 
     public function consulta()
     {
-     return $this->belongsTo(Consulta::class);
+     return $this->hasMany(Consulta::class);
     }
 
 }

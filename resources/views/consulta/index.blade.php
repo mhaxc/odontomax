@@ -3,7 +3,7 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-black text-center">LISTA DE PACIENTE</h1>
+    <h1 class="text-black text-center"><b>LISTA DE PACIENTE</b></h1>
 @stop
 @section('content')
 
@@ -30,6 +30,8 @@
                 <th>Tipo</th>
                 <th>Dentista</th>
                 <th>Paciente</th>
+                <th>Convenio</th>
+
                 <th>Açoes</th>
 
         </thead>
@@ -44,8 +46,9 @@
                     <td>{{$consulta->data_consulta}}</td>
                     <td>{{$consulta->horario}}</td>
                     <td>{{$consulta->tipo}}</td>
-                    <td>{{$consulta->dentista_id->nome}}</td>
+                    <td>{{$consulta->dentista_id}}</td>
                     <td>{{$consulta->paciente_id}}</td>
+                    <td>{{$consulta->convenio_id}}</td>
                 <td>
                 <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('consulta.destroy',$consulta->id)}}">
                 
@@ -57,7 +60,8 @@
                 </form>
             </td>
 
-                </tr>
+        </tr>
+
         </div>
     </div>
 

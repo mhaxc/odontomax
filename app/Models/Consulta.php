@@ -10,12 +10,12 @@ class Consulta extends Model
 
     public function dentistas()
 {
-         return $this->hasMany(Dentista::class);
+         return $this->belongsTo(Dentista::class);
 }
 
     public function pacientes()
     {
-        return $this->hasMany(Paciente::class);
+        return $this->belongsTo(Paciente::class);
     }
 
 

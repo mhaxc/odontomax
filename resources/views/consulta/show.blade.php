@@ -44,7 +44,7 @@
                                           <td>{{$consulta->dentista_id}}</td>
                                           <td>{{$consulta->paciente_id}}</td>
                                           <td>
-      <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('paciente.edit',$paciente->id)}}">Editar</a>
+      <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}">Editar</a>
 
 
 

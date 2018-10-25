@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consulta;
-use App\Models\Convenio;
-use App\Models\Dentista;
-use App\Models\Paciente;
+use App\Models\Agenda;
 use Illuminate\Http\Request;
 
-class ConsultaController extends Controller
+class AgendaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +14,8 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-
-        $consultas = Consulta::latest()->paginate(10);
-
-        return view('consulta.index',compact('consultas'));
-
-
-
+        $agendas = Agenda::latest()->paginate(10);
+        return view('agenda.index',compact('agendas'));
     }
 
     /**
@@ -33,10 +25,7 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        $dentistas = Dentista::all();
-        $pacientes=Paciente::all();
-        $convenios=Convenio::all();
-        return view ('consulta.create ',compact('dentistas','pacientes','convenios'));
+        //
     }
 
     /**
@@ -47,17 +36,7 @@ class ConsultaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'data'=>'required',
-            'horario'=>'required',
-            'tipo'=>'required',
-
-
-
-        ]);
-
-        Consulta::create($request->all());
-        return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+        //
     }
 
     /**
@@ -68,8 +47,7 @@ class ConsultaController extends Controller
      */
     public function show($id)
     {
-        $consulta=Consulta::find($id);
-        return view('consulta.show',compact('consulta'));
+        //
     }
 
     /**
@@ -80,8 +58,7 @@ class ConsultaController extends Controller
      */
     public function edit($id)
     {
-        $consulta = Consulta::find($id);
-        return view('consulta.edit',compact('consulta'));
+        //
     }
 
     /**
@@ -93,15 +70,7 @@ class ConsultaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'data'=>'required',
-            'horario'=>'required',
-            'tipo'=>'required',
-
-        ]);
-
-        Consulta::create($request->all());
-        return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+        //
     }
 
     /**
