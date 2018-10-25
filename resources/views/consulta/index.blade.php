@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Paciente')
+@section('title', 'Consultas')
 
 @section('content_header')
     <h1 class="text-black text-center">LISTA DE PACIENTE</h1>
@@ -44,7 +44,7 @@
                     <td>{{$consulta->data_consulta}}</td>
                     <td>{{$consulta->horario}}</td>
                     <td>{{$consulta->tipo}}</td>
-                    <td>{{$consulta->dentista_id}}</td>
+                    <td>{{$consulta->dentista_id->nome}}</td>
                     <td>{{$consulta->paciente_id}}</td>
                 <td>
                 <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('consulta.destroy',$consulta->id)}}">

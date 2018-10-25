@@ -44,6 +44,11 @@
         {{ Form::label('cpf', 'cpf', array('class'=>'control-label')) }}
         {{ Form::text('cpf', null, array('placeholder'=>'Seu cpf valido...', 'class'=>'form-control')) }}
     </div>
+   
+    <div class="form-group">
+        {{ Form::label('obs', 'Observaçao', array('class'=>'control-label')) }}
+        {{ Form::text('obs', null, array('placeholder'=>' Observaçao...', 'class'=>'form-control')) }}
+    </div>
 
 
 

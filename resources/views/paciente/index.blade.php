@@ -30,7 +30,8 @@
                 <th>E-mail</th>
                 <th>Endereço</th>
                 <th>Cpf</th>
-                <th>Açoes</th>
+                <th>Observação</th>
+                <th>Ações</th>
 
         </thead>
         <tbody>
@@ -46,6 +47,7 @@
                     <td>{{$paciente->email}}</td>
                     <td>{{$paciente->endereco}}</td>
                     <td>{{$paciente->cpf}}</td>
+                    <td>{{$paciente->obs}}</td>
                 <td>
                 <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('paciente.destroy',$paciente->id)}}">
                 

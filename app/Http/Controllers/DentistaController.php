@@ -86,9 +86,11 @@ class DentistaController extends Controller
     public function update(Request $request,$id)
     {
         $request->validate([
-            'nome'=>'required',
-            'telefone'=> 'required|min:9',
-            'email' => 'required'
+            'nome'=>'required|min:3',
+            'telefone'=>'required|min:9',
+            'email'=>'required|email',
+            'endereco'=>'required ',
+            'sigla'=>'required|min:3',
 
           ]);
             

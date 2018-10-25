@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Pacientes')
+@section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-center">NOVO PACIENTE</h1>
+    <h1 class="text-center">NOVA CONSULTA</h1>
     
 @stop
 
@@ -16,36 +16,33 @@
         </div>
     @endif
  
-    {{ Form::open(['action'=>'PacienteController@store']) }}
+    {{ Form::open(['action'=>'ConsultaController@store']) }}
 
         {{csrf_field()}}
 
     <div class="form-group">
-        {{ Form::label('nome', 'Nome', array('class'=>'control-label')) }}
-        {{ Form::text('nome', null, array('placeholder'=>'Seu nome...', 'class'=>'form-control')) }}
+        {{ Form::label('data', 'Data', array('class'=>'control-label')) }}
+        {{ Form::date('data', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('Telefone', 'Telefone', array('class'=>'control-label')) }}
-        {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control')) }}
+        {{ Form::label('horario', 'Horario', array('class'=>'control-label')) }}
+        {{ Form::time('horario', null, array('placeholder'=>'Horario...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('email', 'E-mail', array('class'=>'control-label')) }}
-        {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
+        {{ Form::label('tipo', 'Tipo', array('class'=>'control-label')) }}
+        {{ Form::text('tipo', null, array('placeholder'=>'Seu o tipo de consulta...', 'class'=>'form-control')) }}
     </div>
     
     <div class="form-group">
-        {{ Form::label('endereco', 'Endereco', array('class'=>'control-label')) }}
-        {{ Form::text('endereco', null, array('placeholder'=>'Seu endereco...', 'class'=>'form-control')) }}
-    </div>
-   
-    <div class="form-group">
-        {{ Form::label('cpf', 'cpf', array('class'=>'control-label')) }}
-        {{ Form::text('cpf', null, array('placeholder'=>'Seu cpf valido...', 'class'=>'form-control')) }}
-    </div>
 
+                
+    </select>
 
+</div>
+    
+    
 
     <div class="form-group">
         {{ Form::submit('Salvar', array('class' => 'btn btn-success')) }}

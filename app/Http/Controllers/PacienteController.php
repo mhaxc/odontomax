@@ -38,11 +38,11 @@ class PacienteController extends Controller
     {
         $this->validate($request,[
             'cpf'=>'required|min:11',
-            'nome'=>'required|min:9',
+            'nome'=>'required',
             'endereco'=>'required',
             'telefone'=>'required ',
             'email'=>'required|email',
-
+            'obs'=>'required|max:10',
 
         ]);
 
@@ -90,7 +90,7 @@ class PacienteController extends Controller
             'endereco'=>'required',
             'telefone'=>'required ',
             'email'=>'required|email',
-
+            'obs'=>'required|max:10',
         ]);
 
         Paciente::find($id)->update($request->all());
