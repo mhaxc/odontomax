@@ -8,7 +8,7 @@
 @section('content')
 
 
-<a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success">Adicionar</button></a>
+<a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))

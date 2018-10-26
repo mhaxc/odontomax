@@ -22,4 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/dentista','DentistaController');
 Route::resource('/paciente','PacienteController');
 Route::resource('/consulta','ConsultaController');
-Route::resource('/agenda','AgendaController');
+Route::resource('/agendas','AgendaController');
+Route::resource('/convenio','ConvenioController');

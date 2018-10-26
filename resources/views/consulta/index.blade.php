@@ -3,12 +3,12 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-black text-center"><b>LISTA DE PACIENTE</b></h1>
+    <h1 class="text-black text-center"><b>LISTA DE CONSULTAS</b></h1>
 @stop
 @section('content')
 
 
-<a href="{{route('consulta.create')}}"><button type="submit" class ="btn btn-success">Adicionar</button></a>
+<a href="{{route('consulta.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))

@@ -141,13 +141,13 @@ return [
         ],
 
         [
-            'text' => 'Consulta',
+            'text' => 'Consultas',
             'url'  => 'consulta',
             'icon' => 'plus-square',
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
+            'text' => 'Convenios',
+            'url'  => 'convenio',
             'icon' => 'lock',
         ],
 

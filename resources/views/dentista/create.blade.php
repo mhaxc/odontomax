@@ -43,7 +43,7 @@
     <div class="form-group form-group-lg">
         {{ Form::label('sigla', 'sigla', array('class'=>'control-label')) }}
         {{ Form::text('sigla', null, array('placeholder'=>'Seu sigla...', 'class'=>'form-control')) }}
-    </div>s
+    </div>
 
 
 

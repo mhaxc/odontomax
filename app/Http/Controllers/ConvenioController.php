@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Consulta;
-use App\Models\Convenio;
-use App\Models\Dentista;
-use App\Models\Paciente;
 use Illuminate\Http\Request;
-
-class ConsultaController extends Controller
+use App\Models\Convenio;
+class ConvenioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +13,8 @@ class ConsultaController extends Controller
      */
     public function index()
     {
-
-        $consultas = Consulta::latest()->paginate(10);
-
-        return view('consulta.index',compact('consultas'));
-
-
-
+        $convenios = Convenio::latest()->paginate(10);
+        return view('convenio.index',compact('convenios'));
     }
 
     /**
@@ -33,10 +24,7 @@ class ConsultaController extends Controller
      */
     public function create()
     {
-        $dentistas = Dentista::all();
-        $pacientes=Paciente::all();
-        $convenios=Convenio::all();
-        return view ('consulta.create ',compact('dentistas','pacientes','convenios'));
+        return view('convenio.create');
     }
 
     /**
@@ -48,16 +36,17 @@ class ConsultaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'data_consulta'=>'required',
-            'horario'=>'required',
-            'tipo'=>'required',
-
-
+            'nome'=>'required',
+            'data'=>'required',
+            'regiao'=>'required',
+        
 
         ]);
 
-        Consulta::create($request->all());
-        return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+        Convenio::create($request->all());
+        return redirect(route('convenio.index'))->with('success','Adicionado  com Sucesso');
+
+
     }
 
     /**
@@ -68,8 +57,9 @@ class ConsultaController extends Controller
      */
     public function show($id)
     {
-        $consulta=Consulta::find($id);
-        return view('consulta.show',compact('consulta'));
+        $convenio = Convenio::find($id);
+        return view('convenio.show',compact('convenio'));
+
     }
 
     /**
@@ -80,8 +70,8 @@ class ConsultaController extends Controller
      */
     public function edit($id)
     {
-        $consulta = Consulta::find($id);
-        return view('consulta.edit',compact('consulta'));
+        $convenio = Convenio::find($id);
+        return view('convenio.edit',compact('convenio'));
     }
 
     /**
@@ -94,14 +84,16 @@ class ConsultaController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
+            'nome'=>'required',
             'data'=>'required',
-            'horario'=>'required',
-            'tipo'=>'required',
+            'regiao'=>'required',
+        
 
         ]);
 
-        Consulta::create($request->all());
-        return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+        Convenio::find($id)->update($request->all());
+        return redirect(route('convenio.index'))->with('success','Dentista Alterado com Sucesso');
+
     }
 
     /**
@@ -112,6 +104,7 @@ class ConsultaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Convenio::find($id)->delete();
+        return redirect(route('convenio.index'))->with('success','Deletado com  sucesso ');
     }
 }

@@ -49,7 +49,7 @@
 
         <div class="form-group">
             {{ Form::submit('Atualizar', array('class' => 'btn btn-success')) }}
-            <a href="{{route('consulta.index')}}" class=" btn btn-danger">Voltar</a>
+            <a href="{{route('consulta.index')}}" class=" btn btn-danger glyphicon glyphicon-repeat"> Voltar</a>
         </div>
 {{ Form::close() }}
 

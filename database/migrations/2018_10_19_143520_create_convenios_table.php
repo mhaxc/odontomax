@@ -16,8 +16,8 @@ class CreateConveniosTable extends Migration
         Schema::create('convenios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->date('data_inicio');
-            $table->string('regioes');
+            $table->date('data');
+            $table->string('regiao');
             $table->timestamps();
         });
     }
