@@ -24,3 +24,5 @@ Route::resource('/paciente','PacienteController');
 Route::resource('/consulta','ConsultaController');
 Route::resource('/agendas','AgendaController');
 Route::resource('/convenio','ConvenioController');
+Route::resource('/agenda','AgendaController');
+Route::resource('/consultorio','ConsultorioController');

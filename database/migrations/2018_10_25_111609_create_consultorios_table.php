@@ -16,7 +16,7 @@ class CreateConsultoriosTable extends Migration
         Schema::create('consultorios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->integer('cnpj')->unique();
+            $table->string('cnpj')->unique();
             $table->string('endereco');
             $table->string('bairro');
             $table->string('telefone');

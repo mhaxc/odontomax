@@ -8,7 +8,7 @@
 @section('content')
 
 
-<a href="{{route('convenio.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
+<a href="{{route('convenio.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus">Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))
@@ -47,13 +47,13 @@
                 
                    
                 <td>
-                <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('convenio.destroy',$convenio->id)}}">
+                <form onsubmit="return confirm('Deseja  Realmente Apagar ')" class ="d-inline-block" method ="post" action="{{route('convenio.destroy',$convenio->id)}}">
                 
-                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('convenio.show',$convenio->id)}}"> Ver </a>
-                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('convenio.edit',$convenio->id)}}"> Editar </a>
+                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('convenio.show',$convenio->id)}}"></a>
+                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('convenio.edit',$convenio->id)}}"></a>
                     @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"> Delete </button>
+                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"></button>
                 </form>
             </td>
 

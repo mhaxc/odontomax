@@ -17,6 +17,7 @@ class CreateAgendasTable extends Migration
             $table->increments('id');
             $table->date('data');
             $table->time('horario');
+            $table->string('nome');
             $table->integer('consultorio_id')->unsigned();
             $table->integer('dentista_id')->unsigned();
             $table->foreign('dentista_id')->references('id')->on('dentistas');

@@ -22,17 +22,17 @@
         {{csrf_field()}}
 
        <div class="form-group form-group-lg">
-        {{ Form::label('nome', 'Nome', array('class'=>'control-label')) }}
+        {{ Form::label('nome', 'NOME', array('class'=>'control-label')) }}
         {{ Form::text('nome', null, array('placeholder'=>'Nome  do Convenio...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group form-group-lg">
-        {{ Form::label('data', 'Data', array('class'=>'control-label')) }}
+        {{ Form::label('data', 'DATA', array('class'=>'control-label')) }}
         {{ Form::date('data', null, array('placeholder'=>'Seu a  data da  nome  do convenio...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group form-group-lg">
-        {{ Form::label('regiao', 'regiao', array('class'=>'control-label')) }}
+        {{ Form::label('regiao', 'REGIÃO', array('class'=>'control-label')) }}
         {{ Form::text('regiao', null, array('placeholder'=>'Regiao do Convenio..', 'class'=>'form-control')) }}
     </div>
 

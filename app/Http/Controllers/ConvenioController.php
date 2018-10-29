@@ -92,7 +92,7 @@ class ConvenioController extends Controller
         ]);
 
         Convenio::find($id)->update($request->all());
-        return redirect(route('convenio.index'))->with('success','Dentista Alterado com Sucesso');
+        return redirect(route('convenio.index'))->with('success',' Alterado com Sucesso');
 
     }
 

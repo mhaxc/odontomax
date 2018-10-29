@@ -21,8 +21,8 @@
         {{csrf_field()}}
 
     <div class="form-group form-group-lg">
-        {{ Form::label('data', 'Data', array('class'=>'control-label')) }}
-        {{ Form::date('data', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control')) }}
+        {{ Form::label('data_consulta', 'Data', array('class'=>'control-label')) }}
+        {{ Form::date('data_consulta', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group form-group-lg">
@@ -54,7 +54,7 @@
         </select>
 </div>
 <div class="form-group form-group-lg">
-        <select class="form-control" id="convenio">
+        <select class="form-control" id="Convenio">
             <option class="form-control"><h2>Convenio</h2></option>
             @foreach($convenios  as $convenio)
                <option value={{$convenio->id}}>{{$convenio->nome}}</option>

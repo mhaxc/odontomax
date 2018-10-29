@@ -3,14 +3,14 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-center">PACIENTE</h1>
+    <h1 class="text-center">Convenio</h1>
 @stop
 
 @section('content')
     <div class="card mt-3">
         <div class="col-lg-12 ">
           <div class="pull-left">
-            <h3><a class="btn btn-success glyphicon glyphicon-pencil" href="{{route('paciente.index')}}">Voltar</a></h3>
+            <h3><a class="btn btn-danger glyphicon glyphicon-repeat" href="{{route('convenio.index')}}">Voltar </a></h3>
 
               <div class="table">
 
@@ -41,7 +41,7 @@
                                          <td>{{$convenio->data}}</td>
                                           <td>{{$convenio->regiao}}</td>
                                           
-                                          <td><a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('convenio.edit',$convenio->id)}}"> Editar </a></td>
+                                          <td><a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('convenio.edit',$convenio->id)}}">Editar</a></td>
 
 
 @stop

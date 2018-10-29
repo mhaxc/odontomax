@@ -23,20 +23,21 @@ class ConsultaController extends Controller
         return view('consulta.index',compact('consultas'));
 
 
-
     }
 
     /**
      * Show the form for creating a new resource.
+     *
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
         $dentistas = Dentista::all();
-        $pacientes=Paciente::all();
-        $convenios=Convenio::all();
+        $pacientes = Paciente::all();
+        $convenios = Convenio::all();
         return view ('consulta.create ',compact('dentistas','pacientes','convenios'));
+
     }
 
     /**
@@ -45,19 +46,19 @@ class ConsultaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,Convenio $convenios )
     {
         $this->validate($request,[
-            'data_consulta'=>'required',
+            'data'=>'required',
             'horario'=>'required',
             'tipo'=>'required',
 
-
-
         ]);
-
         Consulta::create($request->all());
+
         return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+
+
     }
 
     /**
@@ -68,7 +69,7 @@ class ConsultaController extends Controller
      */
     public function show($id)
     {
-        $consulta=Consulta::find($id);
+        $consulta = Consulta::find($id);
         return view('consulta.show',compact('consulta'));
     }
 
@@ -100,8 +101,8 @@ class ConsultaController extends Controller
 
         ]);
 
-        Consulta::create($request->all());
-        return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');
+        Consulta::find($id)->update($request->all());
+        return redirect(route('consulta.index'))->with('success',' Alterado com Sucesso');
     }
 
     /**

@@ -151,9 +151,14 @@ return [
             'icon' => 'lock',
         ],
 
+        [
+            'text' => 'Consultorios',
+            'url'  => 'consultorio',
+            'icon' => 'home',
+        ],
         'AREA FINANCEIRA',
         [
-            'text'    => 'Multilevel',
+            'text'    => 'Financeiro',
             'icon'    => 'share',
             'submenu' => [
                 [

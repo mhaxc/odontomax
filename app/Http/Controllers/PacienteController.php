@@ -42,7 +42,7 @@ class PacienteController extends Controller
             'endereco'=>'required',
             'telefone'=>'required ',
             'email'=>'required|email',
-            'obs'=>'required|max:10',
+            'obs'=>'required|max:15',
 
         ]);
 
@@ -90,7 +90,7 @@ class PacienteController extends Controller
             'endereco'=>'required',
             'telefone'=>'required ',
             'email'=>'required|email',
-            'obs'=>'required|max:10',
+            'obs'=>'required',
         ]);
 
         Paciente::find($id)->update($request->all());

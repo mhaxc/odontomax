@@ -8,7 +8,7 @@
 @section('content')
 
 
-<a href="{{route('paciente.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
+<a href="{{route('paciente.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus">Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))
@@ -25,12 +25,12 @@
 
             <tr>
                 <th>#</th>
-                <th>Nome</th>
-                <th>Telefone</th>
+                <th>NOME</th>
+                <th>TELEFONE</th>
                 <th>E-mail</th>
-                <th>Endereço</th>
-                <th>Cpf</th>
-                <th>Observação</th>
+                <th>ENDEREÇO</th>
+                <th>CPF</th>
+                <th>OBSERVAÇAO</th>
                 <th>Ações</th>
 
         </thead>
@@ -51,11 +51,11 @@
                 <td>
                 <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('paciente.destroy',$paciente->id)}}">
                 
-                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('paciente.show',$paciente->id)}}"> Ver </a>
-                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('paciente.edit',$paciente->id)}}"> Editar </a>
+                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('paciente.show',$paciente->id)}}"></a>
+                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('paciente.edit',$paciente->id)}}"></a>
                     @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"> Delete </button>
+                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"></button>
                 </form>
             </td>
 

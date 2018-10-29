@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'editar Paciente')
+@section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-center">Editar Paciente = {{$paciente->nome}}</h1>
+    <h1 class="text-center">EDITAR PACIENTE</h1>
 @stop
 
 @section('content')
@@ -17,7 +17,7 @@
         </ul>
       </div><br />
   @endif
-{{ Form::model($paciente,['method'=>'PATCH','route'=>['paciente.update',$paciente]]) }}
+{{ Form::model($consulta,['method'=>'PATCH','route'=>['consulta.update',$consulta]]) }}
 
         {{csrf_field()}}
 
@@ -45,14 +45,11 @@
         {{ Form::text('cpf', null, array('placeholder'=>'Seu Cpf valido!...', 'class'=>'form-control')) }}
         </div>
 
-        <div class="form-group form-group-lg">
-            {{ Form::label('obs', 'Observaçao', array('class'=>'control-label')) }}
-            {{ Form::text('obs', null, array('placeholder'=>' Observaçao...', 'class'=>'form-control')) }}
-        </div>
 
-        <div class="form-group form-group-lg">
+
+        <div class="form-group">
             {{ Form::submit('Atualizar', array('class' => 'btn btn-success')) }}
-            <a href="{{route('paciente.index')}}" class=" btn btn-danger">Voltar</a>
+            <a href="{{route('consulta.index')}}" class=" btn btn-danger glyphicon glyphicon-repeat"> Voltar</a>
         </div>
 {{ Form::close() }}
 

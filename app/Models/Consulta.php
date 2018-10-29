@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consulta extends Model
 {
-    protected $fillable =['data_consulta','horario','tipo','dentista_id','paciente_id','convenio_id'];
+    protected $fillable =['data','horario','tipo','dentista_id','paciente_id','convenio_id'];
 
     public function dentistas()
 {
@@ -16,6 +16,11 @@ class Consulta extends Model
     public function pacientes()
     {
         return $this->belongsTo(Paciente::class);
+    }
+
+    public function convenios()
+    {
+        return $this->belongsTo(Convenio::class);
     }
 
 
