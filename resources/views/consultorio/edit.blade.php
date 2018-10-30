@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Consultas')
+@section('title', 'Consultórios')
 
 @section('content_header')
-    <h1 class="text-center">Editar Consultório</h1>
+    <h1 class="text-black text-center"><b>EDITAR DE CONSULTÓRIOS</b></h1>
 @stop
 
 @section('content')

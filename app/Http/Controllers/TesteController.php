@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Paciente;
+use App\Teste;
 use Illuminate\Http\Request;
 
-class PacienteController extends Controller
+class TesteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-
-        $pacientes = Paciente::latest()->paginate(10);
-        return view('paciente.index',compact('pacientes'));
+        $testes = Teste::all();
+        return view('teste.index', compact('testes'));
     }
 
     /**
@@ -26,7 +25,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        return view('paciente.create');
+        return view('testes.create');
     }
 
     /**
@@ -37,20 +36,10 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'cpf'=>'required|min:11',
-            'nome'=>'required',
-            'endereco'=>'required',
-            'telefone'=>'required ',
-            'email'=>'required|email',
-            'obs'=>'required|max:15',
-
-        ]);
-
-        Paciente::create($request->all());
-        return redirect(route('paciente.index'))->with('success','Adicionado  com Sucesso');
-
+        Teste::create($request->all());
+        return redirect()->route('teste.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -60,8 +49,7 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        $paciente=Paciente::find($id);
-        return view('paciente.show',compact('paciente'));
+        //
     }
 
     /**
@@ -72,8 +60,7 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        $paciente=Paciente::find($id);
-        return view('paciente.edit',compact('paciente'));
+        //
     }
 
     /**
@@ -85,17 +72,7 @@ class PacienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $request->validate([
-            'cpf'=>'required|min:11',
-            'nome'=>'required|min:9',
-            'endereco'=>'required',
-            'telefone'=>'required ',
-            'email'=>'required|email',
-            'obs'=>'required',
-        ]);
-
-        Paciente::find($id)->update($request->all());
-        return redirect(route('paciente.index'))->with('success','Paciente Alterado com Sucesso');
+        //
     }
 
     /**
@@ -106,7 +83,6 @@ class PacienteController extends Controller
      */
     public function destroy($id)
     {
-        Paciente::find($id)->delete();
-        return redirect(route('paciente.index'))->with('success','Deletado com  sucesso ');
+        //
     }
 }

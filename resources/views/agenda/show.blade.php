@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Consultas')
+@section('title', 'Agendas')
 
 @section('content_header')
     <h1 class="text-center">PACIENTE</h1>
@@ -12,23 +12,23 @@
           <div class="pull-left">
             <h3><a class="btn btn-success glyphicon glyphicon-repeat" href="{{route('paciente.index')}}">Voltar</a></h3>
 
-              <div class="table">
+              <div class="container">
 
                   <table class="table table-hover">
                       <thead>
                       <tr>
-                       <h1>
                            <th>#</th>
-                           <th>Data</th>
-                           <th>Horario</th>
-                           <th>Tipo</th>
-                           <th>Dentista</th>
-                           <th>Paciente</th>
-                           <th>Açoes</th>
+                           <th>DATA</th>
+                           <th>HORARIO INICIO</th>
+                           <th>HORARIO FINAL</th>
+                           <th>NOME</th>
+                           <th>CONSULTÓRIO</th>
+                           <th>DENTISTA</th>
+                           <th>AÇOÊS</th>
                          
-                          <th class="text-align-center">Açoes</th>
+
                       </tr>
-                      </h1>
+
                       </thead>
                       <tbody>
 
@@ -44,12 +44,7 @@
                                           <td>{{$consulta->dentista_id}}</td>
                                           <td>{{$consulta->paciente_id}}</td>
                                           <td>
-      <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}"> Editar</a>
+      <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}"></a>
 
-Button::primary('Imprimir')
-                    ->addAttributes([
-                            'onclick' => "window.print();",
-                            'class' => 'hidden-print'
-                        ])
 
 @stop

@@ -3,7 +3,7 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-center">EDITAR PACIENTE</h1>
+    <h1 class="text-center"><b>EDITAR PACIENTE</b></h1>
 @stop
 
 @section('content')
@@ -40,7 +40,7 @@
 
         <div class="form-group">
             {{ Form::submit('Atualizar', array('class' => 'btn btn-success')) }}
-            <a href="{{route('convenio.index')}}" class=" btn btn-danger">Voltar</a>
+            <a href="{{route('convenio.index')}}" class=" btn btn-danger glyphicon glyphicon-repeat">Voltar</a>
         </div>
 {{ Form::close() }}
 

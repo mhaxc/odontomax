@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consulta;
+use App\Models\Consultorio;
 use App\Models\Convenio;
 use App\Models\Dentista;
 use App\Models\Paciente;
@@ -113,6 +114,8 @@ class ConsultaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Consulta::find($id)->delete();
+        return redirect(route('consulta.index'))->with('success','Deletado com  sucesso ');
+
     }
 }

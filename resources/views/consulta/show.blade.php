@@ -12,23 +12,23 @@
           <div class="pull-left">
             <h3><a class="btn btn-success glyphicon glyphicon-repeat" href="{{route('paciente.index')}}">Voltar</a></h3>
 
-              <div class="table">
+              <div class="container">
 
                   <table class="table table-hover">
                       <thead>
                       <tr>
                        <h1>
                            <th>#</th>
-                           <th>Data</th>
-                           <th>Horario</th>
-                           <th>Tipo</th>
-                           <th>Dentista</th>
-                           <th>Paciente</th>
-                           <th>Açoes</th>
+                           <th>DATA</th>
+                           <th>HORARIO</th>
+                           <th>TIPO</th>
+                           <th>DENTISTA</th>
+                           <th>PACIENTE</th>
+                           <th>AÇOÊS</th>
                          
-                          <th class="text-align-center">Açoes</th>
+
                       </tr>
-                      </h1>
+                          </h1>
                       </thead>
                       <tbody>
 
@@ -46,10 +46,6 @@
                                           <td>
       <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}"> Editar</a>
 
-Button::primary('Imprimir')
-                    ->addAttributes([
-                            'onclick' => "window.print();",
-                            'class' => 'hidden-print'
-                        ])
+
 
 @stop

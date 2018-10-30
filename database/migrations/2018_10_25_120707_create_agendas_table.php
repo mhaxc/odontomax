@@ -16,7 +16,8 @@ class CreateAgendasTable extends Migration
         Schema::create('agendas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
-            $table->time('horario');
+            $table->time('horario_inicio');
+            $table->time('horario_final');
             $table->string('nome');
             $table->integer('consultorio_id')->unsigned();
             $table->integer('dentista_id')->unsigned();
@@ -26,11 +27,7 @@ class CreateAgendasTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::dropIfExists('agendas');

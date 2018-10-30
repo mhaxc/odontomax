@@ -3,7 +3,7 @@
 @section('title', 'editar Paciente')
 
 @section('content_header')
-    <h1 class="text-center">Editar Paciente = {{$paciente->nome}}</h1>
+    <h1 class="text-center">PACIENTE = {{$paciente->nome}}</h1>
 @stop
 
 @section('content')

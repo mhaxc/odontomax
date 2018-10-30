@@ -6,5 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agenda extends Model
 {
-    //
+    protected $fillable = ['data','horario','nome','consultorio_id','dentista_id'];
+
+
+    public function consultorios()
+    {
+        return $this->belongsTo(Consultorio::class);
+    }
+
+    public function dentistas()
+    {
+        return $this->belongsTo(Dentista::class);
+    }
+
 }

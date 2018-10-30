@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDentistasTable extends Migration
+class CreateTestesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,28 +13,26 @@ class CreateDentistasTable extends Migration
      */
     public function up()
     {
-        Schema::create('dentistas', function (Blueprint $table) {
+        Schema::create('testes', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('nome');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('endereco');
-            $table->string('crm');
+            $table->text('descricao')->nullable();
+            $table->date('data');
+            $table->time('hora_inicio');
+            $table->time('hora_final');
             $table->timestamps();
+
         });
     }
 
-
-    /**s
+    /**
      * Reverse the migrations.
      *
      * @return void
      */
-     public function down()
+    public function down()
     {
-        Schema::dropIfExists('dentistas');
-
-
-
+        Schema::dropIfExists('testes');
     }
 }

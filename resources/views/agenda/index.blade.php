@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Consultas')
+@section('title', 'Agendas')
 
 @section('content_header')
-    <h1 class="text-black text-center"><b>LISTA DE AGENDAS</b></h1>
+    <h1 class="text-black text-center"><b>AGENDAS</b></h1>
 @stop
 @section('content')
 
@@ -25,14 +25,13 @@
 
             <tr>
                 <th>#</th>
-                <th>Data</th>
-                <th>Horario</th>
-                <th>Nome</th>
-                <th>Consultorio</th>
-                <th>Dentista</th>
-
-
-                <th>Açoes</th>
+                <th>DATA</th>
+                <th>HORARIO INICIO</th>
+                <th>HORARIO FINAL</th>
+                <th>NOME</th>
+                <th>CONSULTÓRIO</th>
+                <th>DENTISTA</th>
+                <th>AÇOÊS</th>
 
         </thead>
         <tbody>
@@ -44,7 +43,8 @@
                 <tr>
                     <td>{{$agenda->id}}</td>
                     <td>{{$agenda->data}}</td>
-                    <td>{{$agenda->horario}}</td>
+                    <td>{{$agenda->horario_inicio}}</td>
+                    <td>{{$agenda->horario_final}}</td>
                     <td>{{$agenda->nome}}</td>
                     <td>{{$agenda->consultorio_id}}</td>
                     <td>{{$agenda->dentista_id}}</td>
@@ -71,13 +71,6 @@
     </table>
 
  
-    </div>
-    <div class="card mt-2"></div>
-    <div class="card body">
-        
-    
-
-        </h2>
     </div>
 
     <div class="mt-4">

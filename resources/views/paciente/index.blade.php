@@ -3,7 +3,7 @@
 @section('title', 'Paciente')
 
 @section('content_header')
-    <h1 class="text-black text-center">LISTA DE PACIENTE</h1>
+    <h1 class="text-black text-center"><b>PACIENTES</b></h1>
 @stop
 @section('content')
 
@@ -27,8 +27,9 @@
                 <th>#</th>
                 <th>NOME</th>
                 <th>TELEFONE</th>
-                <th>E-mail</th>
+                <th>E-MAIL</th>
                 <th>ENDEREÇO</th>
+                <th>ANIVERSARIO</th>
                 <th>CPF</th>
                 <th>OBSERVAÇAO</th>
                 <th>Ações</th>
@@ -46,6 +47,7 @@
                     <td>{{$paciente->telefone}}</td>
                     <td>{{$paciente->email}}</td>
                     <td>{{$paciente->endereco}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($paciente->aniversario))}}</td>
                     <td>{{$paciente->cpf}}</td>
                     <td>{{$paciente->obs}}</td>
                 <td>

@@ -12,12 +12,12 @@
           <div class="pull-left">
             <h3><a class="btn btn-success" href="{{route('dentista.index')}}">Voltar</a></h3>
 
-              <div class="table">
+              <div class="container">
 
                   <table class="table table-hover">
                       <thead>
                       <tr>
-                       <h1>
+
                           <th>#</th>
                           <th>Nome</th>
                           <th>Telefone</th>
@@ -26,8 +26,7 @@
                           <th>Sigla</th>
                          
                           <th class="text-align-center">Açoes</th>
-                      </tr>
-                      </h1>
+                      </tr>s
                       </thead>
                       <tbody>
 

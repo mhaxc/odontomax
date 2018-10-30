@@ -3,12 +3,12 @@
 @section('title', 'Dentistas')
 
 @section('content_header')
-    <h1 class="text-black text-center">Lista de  Dentista</h1>
+    <h1 class="text-black text-center"><b>DENTISTAS</b></h1>
 @stop
 @section('content')
 
 
-<a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
+<a href="{{route('dentista.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus">Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))
@@ -25,12 +25,12 @@
 
             <tr>
                 <th>#</th>
-                <th>Nome</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Endereço</th>
-                <th>Sigla</th>
-                <th>Açoes</th>
+                <th>NOME</th>
+                <th>TELEFONE</th>
+                <th>EMAIL</th>
+                <th>ENDEREÇO</th>
+                <th>CRM</th>
+                <th>AÇOÊS</th>
 
         </thead>
         <tbody>
@@ -46,14 +46,14 @@
                             <td>{{$dentista->telefone}}</td>
                             <td>{{$dentista->email}}</td>
                             <td>{{$dentista->endereco}}</td>
-                            <td>{{$dentista->sigla}}</td>
+                            <td>{{$dentista->crm}}</td>
                             <td>
-                                <form onsubmit="return confirm('deseja  realmente apagar Esse Dentista')" class ="d-inline-block" method ="post" action="{{route('dentista.destroy',$dentista->id)}}">
-                                    <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('dentista.show',$dentista->id)}}"> Ver </a>
-                                    <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}"> Editar </a>
+                                <form onsubmit="return confirm('Deseja  Realmente Apagar')" class ="d-inline-block" method ="post" action="{{route('dentista.destroy',$dentista->id)}}">
+                                    <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('dentista.show',$dentista->id)}}"></a>
+                                    <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('dentista.edit',$dentista->id)}}"></a>
                                 @csrf
                               @method('DELETE')
-                                    <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"> Delete </button>
+                                    <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"></button>
                             </form>
                             </td>
                             </tr>

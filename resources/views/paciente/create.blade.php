@@ -34,12 +34,17 @@
         {{ Form::label('email', 'E-EMAIL', array('class'=>'control-label')) }}
         {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
     </div>
-    
+
+    <div class="form-group form-group-lg">
+        {{ Form::label('aniversario', 'ANIVERSARIO', array('class'=>'control-label')) }}
+        {{ Form::date('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control')) }}
+    </div>
+
     <div class="form-group form-group-lg">
         {{ Form::label('endereco', 'ENDEREÇO', array('class'=>'control-label')) }}
         {{ Form::text('endereco', null, array('placeholder'=>'Seu endereco...', 'class'=>'form-control')) }}
     </div>
-   
+
     <div class="form-group form-group-lg">
         {{ Form::label('cpf', 'CPF', array('class'=>'control-label')) }}
         {{ Form::text('cpf', null, array('placeholder'=>'Seu cpf valido...', 'class'=>'form-control')) }}

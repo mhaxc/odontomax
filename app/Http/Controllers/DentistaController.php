@@ -42,7 +42,7 @@ class DentistaController extends Controller
             'telefone'=>'required|min:9',
             'email'=>'required|email',
             'endereco'=>'required ',
-            'sigla'=>'required|min:3',
+            'crm'=>'required|min:3',
             
 
         ]);

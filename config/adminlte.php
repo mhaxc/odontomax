@@ -156,6 +156,12 @@ return [
             'url'  => 'consultorio',
             'icon' => 'home',
         ],
+        [
+            'text' => 'teste de agenda',
+            'url'  => 'teste',
+            'icon' => 'calendar',
+        ],
+
         'AREA FINANCEIRA',
         [
             'text'    => 'Financeiro',

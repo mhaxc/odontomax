@@ -8,7 +8,7 @@ class Dentista extends Model
 {
     protected $fillable =
 
-        [ 'nome','telefone','email','endereco','sigla'];
+        [ 'nome','telefone','email','endereco','crm'];
 
     public function consulta()
     {

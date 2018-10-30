@@ -19,6 +19,7 @@ class CreatePacientesTable extends Migration
             $table->string('nome');
             $table->string('endereco');
             $table->string('telefone');
+            $table->date('aniversario');
             $table->string('email');
             $table->string('obs');
             $table->timestamps();

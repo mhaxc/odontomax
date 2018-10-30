@@ -3,7 +3,7 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-center">CONSULTÓRIO</h1>
+    <h1 class="text-black text-center"><b>CONSULTÓRIO</b></h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
           <div class="pull-left">
             <h3><a class="btn btn-danger glyphicon glyphicon-repeat" href="{{route('consultorio.index')}}">Voltar</a></h3>
 
-              <div class="table">
+              <div class="container">
 
                   <table class="table table-hover">
                       <thead>
@@ -25,7 +25,7 @@
                            <th>BAIRRO</th>
                            <th>TELEFONE</th>
                          
-                          <th class="text-align-center">Açoes</th>
+                          <th class="text-align-center">AÇOÊS</th>
                       </tr>
                       </h1>
                       </thead>
@@ -44,7 +44,7 @@
                                       <td>{{$consultorio->bairro}}</td>
                                       <td>{{$consultorio->telefone}}</td>
                                           
-                                          <td><a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consultorio.edit',$consultorio->id)}}"> Editar </a></td>
+                                          <td><a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consultorio.edit',$consultorio->id)}}"></a></td>
 
 
 @stop

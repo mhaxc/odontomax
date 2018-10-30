@@ -3,7 +3,7 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-black text-center"><b>LISTA DE CONVENIOS</b></h1>
+    <h1 class="text-black text-center"><b>CONVENIOS</b></h1>
 @stop
 @section('content')
 
@@ -25,12 +25,12 @@
 
             <tr>
                 <th>#</th>
-                <th>Nome</th>
-                <th>Data</th>
-                <th>Região</th>
+                <th>NOME</th>
+                <th>DATA</th>
+                <th>REGIÂO</th>
                
 
-                <th>Açoes</th>
+                <th>AÇOÊS</th>
 
         </thead>
         <tbody>

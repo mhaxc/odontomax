@@ -16,7 +16,8 @@ class CreateConsultasTable extends Migration
         Schema::create('consultas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('data');
-            $table->time('horario');
+            $table->time('horario_inicio');
+            $table->time('horario_final');
             $table->string('tipo');
             $table->integer('convenio_id')->unsigned();
             $table->integer('dentista_id')->unsigned();

@@ -3,12 +3,12 @@
 @section('title', 'Consultas')
 
 @section('content_header')
-    <h1 class="text-black text-center"><b>LISTA DE CONSULTAS</b></h1>
+    <h1 class="text-black text-center"><b>CONSULTAS</b></h1>
 @stop
 @section('content')
 
 
-<a href="{{route('consulta.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus"> Adicionar</button></a>
+<a href="{{route('consulta.create')}}"><button type="submit" class ="btn btn-success glyphicon glyphicon-plus">Adicionar</button></a>
 <div>
     <br/>
     @if(Session::has('success'))
@@ -25,14 +25,14 @@
 
             <tr>
                 <th>#</th>
-                <th>Data</th>
-                <th>Horario</th>
-                <th>Tipo</th>
-                <th>Dentista</th>
-                <th>Paciente</th>
-                <th>Convenio</th>
+                <th>DATA</th>
+                <th>HORARIO</th>
+                <th>TIPO</th>
+                <th>DENTISTA</th>
+                <th>PACIENTE</th>
+                <th>CONVÊNIO</th>
 
-                <th>Açoes</th>
+                <th>AÇOÊS</th>
 
         </thead>
         <tbody>
@@ -43,20 +43,20 @@
                 <div class="card body">
                 <tr>
                     <td>{{$consulta->id}}</td>
-                    <td>{{$consulta->data_consulta}}</td>
-                    <td>{{$consulta->horario}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($consulta->data_consulta))}}</td>
+                    <td>{{date('H:i:s',strtotime($consulta->horario))}}</td>
                     <td>{{$consulta->tipo}}</td>
                     <td>{{$consulta->dentista_id}}</td>
                     <td>{{$consulta->paciente_id}}</td>
                     <td>{{$consulta->convenio_id}}</td>
                 <td>
-                <form onsubmit="return confirm('deseja  realmente apagar Esse Paciente')" class ="d-inline-block" method ="post" action="{{route('consulta.destroy',$consulta->id)}}">
+                <form onsubmit="return confirm('Deseja  Realmente Apagar ')" class ="d-inline-block" method ="post" action="{{route('consulta.destroy',$consulta->id)}}">
                 
-                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('consulta.show',$consulta->id)}}"> Ver </a>
-                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}"> Editar </a>
+                        <a class="btn btn-warning btn-sm glyphicon glyphicon-eye-open" href="{{ route('consulta.show',$consulta->id)}}"></a>
+                        <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('consulta.edit',$consulta->id)}}"></a>
                     @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"> Delete </button>
+                  <button class="btn btn-danger btn-sm glyphicon glyphicon-trash" type="submit"></button>
                 </form>
             </td>
 

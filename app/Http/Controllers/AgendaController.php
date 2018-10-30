@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Agenda;
+use App\Models\Consultorio;
+use App\Models\Convenio;
+use App\Models\Dentista;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -25,7 +28,10 @@ class AgendaController extends Controller
      */
     public function create()
     {
-        //
+        $dentistas = Dentista::all();
+        $consultorios = Consultorio::all();
+        return view ('agenda.create ',compact('dentistas','consultorios'));
+
     }
 
     /**
@@ -36,7 +42,17 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+
+
+            'horario'=>'required',
+            'tipo'=>'required',
+
+        ]);
+
+        Agenda::create($request->all());
+
+        return redirect(route('agenda.index'))->with('success','Marcado com sucesso  com Sucesso');
     }
 
     /**

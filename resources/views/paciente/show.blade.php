@@ -12,22 +12,21 @@
           <div class="pull-left">
             <h3><a class="btn btn-success" href="{{route('paciente.index')}}">Voltar</a></h3>
 
-              <div class="table">
+              <div class="container ">
 
                   <table class="table table-hover">
-                      <thead>
-                      <tr>
-                       <h1>
-                          <th>#</th>
-                          <th>Nome</th>
-                          <th>Telefone</th>
-                          <th>email</th>
-                          <th>endereco</th>
-                          <th>cpf</th>
+                  <thead>
+                      <tr class="default">
+                          <th class="default">#</th>
+                          <th>NOME</th>
+                          <th>TELEFONE</th>
+                          <th>EMAIL</th>
+                          <th>ANIVERSARIO</th>
+                          <th>ENDEREÇO</th>
+                          <th>CPF</th>
                          
-                          <th class="text-align-center">Açoes</th>
+                          <th class="text-align-center">AÇOÊS</th>
                       </tr>
-                      </h1>
                       </thead>
                       <tbody>
 
@@ -40,6 +39,7 @@
                                           <td>{{$paciente->nome}}</td>
                                           <td>{{$paciente->telefone}}</td>
                                           <td>{{$paciente->email}}</td>
+                                          <td class="">{{ date( 'd/m/Y' ,strtotime($paciente->aniversario))}}</td>
                                           <td>{{$paciente->endereco}}</td>
                                             <td>{{$paciente->cpf}}</td>
                                           <td>

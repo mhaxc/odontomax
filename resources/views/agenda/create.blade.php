@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Consultas')
+@section('title', 'Agendas')
 
 @section('content_header')
-    <h1 class="text-center">NOVA CONSULTA</h1>
+    <h1 class="text-center">AGENDA</h1>
     
 @stop
 
@@ -16,25 +16,29 @@
         </div>
     @endif
  
-    {{ Form::open(['action'=>'ConsultaController@store']) }}
+    {{ Form::open(['action'=>'AgendaController@store']) }}
 
         {{csrf_field()}}
 
     <div class="form-group form-group-lg">
-        {{ Form::label('data_consulta', 'Data', array('class'=>'control-label')) }}
+        {{ Form::label('data_consulta', 'DATA', array('class'=>'control-label')) }}
         {{ Form::date('data_consulta', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group form-group-lg">
-        {{ Form::label('horario', 'Horario', array('class'=>'control-label')) }}
-        {{ Form::time('horario', null, array('placeholder'=>'Horario...', 'class'=>'form-control')) }}
+        {{ Form::label('horario_inicio', 'HORARIO INICIO', array('class'=>'control-label')) }}
+        {{ Form::time('horario_inicio', null, array('placeholder'=>'Horario Inicio...', 'class'=>'form-control')) }}
     </div>
 
     <div class="form-group form-group-lg">
-        {{ Form::label('tipo', 'Tipo', array('class'=>'control-label')) }}
-        {{ Form::text('tipo', null, array('placeholder'=>'Seu o tipo de consulta...', 'class'=>'form-control')) }}
+        {{ Form::label('horario_final', 'HORARIO FINAL', array('class'=>'control-label')) }}
+        {{ Form::time('horario_final', null, array('placeholder'=>'Horario Final...', 'class'=>'form-control')) }}
     </div>
 
+   <div class="form-group form-group-lg">
+        {{ Form::label('tipo', 'TIPO', array('class'=>'control-label')) }}
+        {{ Form::text('tipo', null, array('placeholder'=>'Seu o tipo de consulta...', 'class'=>'form-control')) }}
+    </div>
 
 <div class="form-group form-group-lg">
     <select class="form-control" id="dentista">
@@ -44,20 +48,11 @@
         @endforeach
     </select>
 </div>
-
-<div class="form-group form-group-lg">
-    <select class="form-control" id="paciente">
-        <option class="form-control"><h2>Paciente</h2></option>
-            @foreach($pacientes  as $paciente)
-                <option value={{$paciente->id}}>{{$paciente->nome}}</option>
-            @endforeach
-        </select>
-</div>
 <div class="form-group form-group-lg">
         <select class="form-control" id="Convenio">
-            <option class="form-control"><h2>Convenio</h2></option>
-            @foreach($convenios  as $convenio)
-               <option value={{$convenio->id}}>{{$convenio->nome}}</option>
+            <option class="form-control"><h2>Consultorio</h2></option>
+            @foreach($consultorios as $consultorio)
+               <option value={{$consultorio->id}}>{{$consultorio->nome}}</option>
             @endforeach
         </select>
 </div>
@@ -66,7 +61,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::submit('Salvar', array('class' => 'btn btn-success glyphicon glyphicon-repeat')) }}
-        <a href="{{route('consulta.index')}}" class=" btn btn-danger glyphicon glyphicon-repeat"> Voltar</a>
+        <a href="{{route('agenda.index')}}" class=" btn btn-danger glyphicon glyphicon-repeat">Voltar</a>
     </div>
     {{ Form::close() }}
 
