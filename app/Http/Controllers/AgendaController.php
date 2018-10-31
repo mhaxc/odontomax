@@ -45,7 +45,8 @@ class AgendaController extends Controller
         $this->validate($request,[
 
 
-            'horario'=>'required',
+            'horario_inicio'=>'required',
+            'horario_final'=>'required',
             'tipo'=>'required',
 
         ]);

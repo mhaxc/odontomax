@@ -27,7 +27,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('cnpj', 'CNPJ ', array('class'=>'control-label')) }}
-        {{ Form::number('cnpj', null, array('placeholder'=>'Cnpj...', 'class'=>'form-control')) }}
+        {{ Form::text('cnpj', null, array('placeholder'=>'Cnpj...', 'class'=>'form-control cnpj')) }}
     </div>
 
     <div class="form-group form-group-lg">
@@ -42,7 +42,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('telefone', 'TELEFONE', array('class'=>'control-label')) }}
-        {{ Form::text('telefone', null, array('placeholder'=>'Telefone..', 'class'=>'form-control')) }}
+        {{ Form::text('telefone', null, array('placeholder'=>'Telefone..', 'class'=>'form-control phone_with_ddd')) }}
     </div>
 
     

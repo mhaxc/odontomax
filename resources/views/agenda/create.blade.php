@@ -22,17 +22,17 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('data_consulta', 'DATA', array('class'=>'control-label')) }}
-        {{ Form::date('data_consulta', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control')) }}
+        {{ Form::text('data_consulta', null, array('placeholder'=>'Seu a  data da  consulta...', 'class'=>'form-control date')) }}
     </div>
 
     <div class="form-group form-group-lg">
         {{ Form::label('horario_inicio', 'HORARIO INICIO', array('class'=>'control-label')) }}
-        {{ Form::time('horario_inicio', null, array('placeholder'=>'Horario Inicio...', 'class'=>'form-control')) }}
+        {{ Form::text('horario_inicio', null, array('placeholder'=>'Horario Inicio...', 'class'=>'form-control time')) }}
     </div>
 
     <div class="form-group form-group-lg">
         {{ Form::label('horario_final', 'HORARIO FINAL', array('class'=>'control-label')) }}
-        {{ Form::time('horario_final', null, array('placeholder'=>'Horario Final...', 'class'=>'form-control')) }}
+        {{ Form::text('horario_final', null, array('placeholder'=>'Horario Final...', 'class'=>'form-control time')) }}
     </div>
 
    <div class="form-group form-group-lg">

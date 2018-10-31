@@ -27,7 +27,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('Telefone', 'Telefone', array('class'=>'control-label')) }}
-        {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control')) }}
+        {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control phone_with_ddd')) }}
     </div>
 
     <div class="form-group form-group-lg">

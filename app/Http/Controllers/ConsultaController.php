@@ -51,7 +51,8 @@ class ConsultaController extends Controller
     {
         $this->validate($request,[
             'data'=>'required',
-            'horario'=>'required',
+            'horario_inicio'=>'required',
+            'horario_final'=>'required',
             'tipo'=>'required',
 
         ]);

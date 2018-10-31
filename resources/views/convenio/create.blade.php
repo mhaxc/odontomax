@@ -27,7 +27,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('data', 'DATA', array('class'=>'control-label')) }}
-        {{ Form::date('data', null, array('placeholder'=>'Seu a  data da  nome  do convenio...', 'class'=>'form-control')) }}
+        {{ Form::text('data', null, array('placeholder'=>'Seu a  data da  nome  do convenio...', 'class'=>'form-control date')) }}
     </div>
 
     <div class="form-group form-group-lg">

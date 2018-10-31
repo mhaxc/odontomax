@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Agenda extends Model
 {
-    protected $fillable = ['data','horario','nome','consultorio_id','dentista_id'];
+    protected $fillable = ['data','horario_inicio','horario_final','nome','consultorio_id','dentista_id'];
 
 
     public function consultorios()

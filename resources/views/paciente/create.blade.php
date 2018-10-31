@@ -27,7 +27,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('Telefone', 'TELEFONE', array('class'=>'control-label')) }}
-        {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control')) }}
+        {{ Form::text('telefone', null, array('placeholder'=>'Seu telefone...', 'class'=>'form-control phone_with_ddd')) }}
     </div>
 
     <div class="form-group form-group-lg">
@@ -37,7 +37,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('aniversario', 'ANIVERSARIO', array('class'=>'control-label')) }}
-        {{ Form::date('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control')) }}
+        {{ Form::text('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control date')) }}
     </div>
 
     <div class="form-group form-group-lg">
@@ -47,7 +47,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('cpf', 'CPF', array('class'=>'control-label')) }}
-        {{ Form::text('cpf', null, array('placeholder'=>'Seu cpf valido...', 'class'=>'form-control')) }}
+        {{ Form::text('cpf', null, array('placeholder'=>'Seu cpf valido...', 'class'=>'form-control cpf')) }}
     </div>
    
     <div class="form-group form-group-lg">

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Teste;
 use Illuminate\Http\Request;
 
-class TesteController extends Controller
+class MedicamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class TesteController extends Controller
      */
     public function index()
     {
-        $testes = Teste::all();
-        return view('teste.index', compact('testes'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class TesteController extends Controller
      */
     public function create()
     {
-        return view('testes.create');
+        //
     }
 
     /**
@@ -36,10 +34,8 @@ class TesteController extends Controller
      */
     public function store(Request $request)
     {
-        Teste::create($request->all());
-        return redirect()->route('teste.index');
+        //
     }
-
 
     /**
      * Display the specified resource.

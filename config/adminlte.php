@@ -117,7 +117,7 @@ return [
         ],
 
         [
-            'text'        => 'Agenda',
+            'text'        => 'AGENDAS',
             'url'         => 'agenda',
             'icon'        => 'calendar',
 
@@ -125,7 +125,7 @@ return [
         ],
 
         [
-            'text'        => 'Dentistas',
+            'text'        => 'DENTISTAS',
             'url'         => 'dentista',
             'icon'        => ' fa-user-md',
           
@@ -133,33 +133,39 @@ return [
         ],
 
         [
-            'text'        => 'Pacientes',
+            'text'        => 'PACIENTES',
             'url'         => 'paciente',
-            'icon'        => 'user',
+            'icon'        => ' fa-user-plus',
           
            
         ],
 
         [
-            'text' => 'Consultas',
+            'text' => 'CONSULTAS',
             'url'  => 'consulta',
             'icon' => 'plus-square',
         ],
         [
-            'text' => 'Convenios',
+            'text' => 'CONVÊNIOS',
             'url'  => 'convenio',
-            'icon' => 'lock',
+            'icon' => ' fa-credit-card',
         ],
 
         [
-            'text' => 'Consultorios',
+            'text' => 'CONSULTORIOS',
             'url'  => 'consultorio',
             'icon' => 'home',
         ],
+
         [
-            'text' => 'teste de agenda',
-            'url'  => 'teste',
-            'icon' => 'calendar',
+            'text' => 'MEDICAMENTOS',
+            'url'  => 'medicamento',
+            'icon' => 'heartbeat',
+        ],
+        [
+            'text' => 'RECEITAS',
+            'url'  => 'receitas',
+            'icon' => 'sticky-note-o',
         ],
 
         'AREA FINANCEIRA',
