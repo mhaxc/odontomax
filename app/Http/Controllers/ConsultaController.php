@@ -34,6 +34,8 @@ class ConsultaController extends Controller
      */
     public function create()
     {
+       
+       
         $dentistas = Dentista::all();
         $pacientes = Paciente::all();
         $convenios = Convenio::all();
