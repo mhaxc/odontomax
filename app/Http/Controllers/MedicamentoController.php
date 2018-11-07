@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medicamento;
 use Illuminate\Http\Request;
 
 class MedicamentoController extends Controller
@@ -13,7 +14,8 @@ class MedicamentoController extends Controller
      */
     public function index()
     {
-        //
+        $medicamentos = Medicamento::latest()->paginate(10);
+        return view('medicamento.index',compact('medicamentos'));
     }
 
     /**

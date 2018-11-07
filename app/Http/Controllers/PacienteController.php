@@ -17,6 +17,7 @@ class PacienteController extends Controller
 
         $pacientes = Paciente::latest()->paginate(10);
         return view('paciente.index',compact('pacientes'));
+
     }
 
     /**
