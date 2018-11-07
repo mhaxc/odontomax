@@ -19,7 +19,6 @@
 </div>
 <br/>
 <div class="table ">
-
         <table class="table table-hover">
         <thead>
 
@@ -37,7 +36,11 @@
         </thead>
         <tbody>
 
+
+
      @foreach($pacientes as $paciente)
+
+
 
             <div class="card mt-3">
                 <div class="card body">
@@ -61,7 +64,7 @@
                 </form>
             </td>
 
-                </tr>
+        </tr>
         </div>
     </div>
 

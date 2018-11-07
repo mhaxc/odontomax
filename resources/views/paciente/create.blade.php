@@ -37,7 +37,7 @@
 
     <div class="form-group form-group-lg">
         {{ Form::label('aniversario', 'ANIVERSARIO', array('class'=>'control-label')) }}
-        {{ Form::text('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control date')) }}
+        {{ Form::input('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control date')) }}
     </div>
 
     <div class="form-group form-group-lg">

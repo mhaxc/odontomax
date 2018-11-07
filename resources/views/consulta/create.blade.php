@@ -42,7 +42,7 @@
 
 
 <div class="form-group form-group-lg">
-    <select class="form-control" id="dentista">
+    <select class="form-control"  name="dentista_id" id="dentista">
         <option class="form-control">DENTISTAS</option>
         @foreach($dentistas  as $dentista)
             <option value={{$dentista->id}}>{{$dentista->nome}}</option>
@@ -51,7 +51,7 @@
 </div>
 
 <div class="form-group form-group-lg">
-    <select class="form-control" id="paciente">
+    <select class="form-control" name="paciente_id" id="paciente">
         <option class="form-control"><h2>PACIENTES</h2></option>
             @foreach($pacientes  as $paciente)
                 <option value={{$paciente->id}}>{{$paciente->nome}}</option>
@@ -59,7 +59,7 @@
         </select>
 </div>
 <div class="form-group form-group-lg">
-        <select class="form-control" id="convenio">
+        <select class="form-control" name="convenio_id" id="convenio">
             <option class="form-control"><h2>CONVENIOS</h2></option>
             @foreach($convenios  as $convenio)
                <option value={{$convenio->id}}>{{$convenio->nome}}</option>

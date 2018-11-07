@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+    private $pacientes;
+    public function __construct(Paciente $pacientes)
     {
+
+        $contar = Paciente::all()->count($pacientes);
+            return $contar;
         $this->middleware('auth');
+
     }
 
     /**
@@ -25,4 +27,8 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+
+
+
 }

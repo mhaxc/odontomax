@@ -26,7 +26,8 @@
             <tr>
                 <th>#</th>
                 <th>DATA</th>
-                <th>HORARIO</th>
+                <th>HORARIO_INICIO</th>
+                <th>HORARIO_FINAL</th>
                 <th>TIPO</th>
                 <th>DENTISTA</th>
                 <th>PACIENTE</th>
@@ -43,8 +44,9 @@
                 <div class="card body">
                 <tr>
                     <td>{{$consulta->id}}</td>
-                    <td>{{ date( 'd/m/Y' , strtotime($consulta->data_consulta))}}</td>
-                    <td>{{date('H:i:s',strtotime($consulta->horario))}}</td>
+                    <td>{{ date( 'd/m/Y' , strtotime($consulta->data))}}</td>
+                    <td>{{time('H:i:s',strtotime($consulta->horario_inicio))}}</td>
+                    <td>{{time('H:i:s',strtotime($consulta->horario_final))}}</td>
                     <td>{{$consulta->tipo}}</td>
                     <td>{{$consulta->dentista_id}}</td>
                     <td>{{$consulta->paciente_id}}</td>

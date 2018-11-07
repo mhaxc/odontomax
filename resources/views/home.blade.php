@@ -16,7 +16,6 @@
             <div class="inner">
 
 
-
                 <h3>2</h3>
                 <h4>Pacientes</h4>
 
@@ -27,7 +26,6 @@
             <a href="{{route('paciente.index')}}" class="small-box-footer">Pacientes <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
-
 
 
 
@@ -45,7 +43,7 @@
             <div class="icon">
                 <i class="ion-stats-bars"></i>
             </div>
-            <a href="{{route('dentista.index')}}" class="small-box-footer">Dentistas<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('dentista.index')}}" class="small-box-footer">Dentistas <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -62,7 +60,7 @@
             <div class="icon ">
                 <i class="ion ion-pricetags"></i>
             </div>
-            <a href="{{route('consulta.index')}}" class="small-box-footer">Consultas<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('consulta.index')}}" class="small-box-footer">Consultas <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -75,12 +73,12 @@
             <div class="inner">
                 <h3>65</h3>
 
-                <p>Unique Visitors</p>
+                <h4>Convenios</h4>
             </div>
             <div class="icon">
                 <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('convenio.index')}}" class="small-box-footer">Convenios <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -111,7 +109,7 @@
             <div class="icon">
                 <i class="ion-calendar"></i>
             </div>
-            <a href="{{route('agenda.index')}}" class="small-box-footer">Agendas<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('agenda.index')}}" class="small-box-footer">Agendas <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -126,7 +124,7 @@
             <div class="icon">
                 <i class="ion-android-apps"></i>
             </div>
-            <a href="{{route('medicamento.index')}}" class="small-box-footer">Medicamentos<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('medicamento.index')}}" class="small-box-footer">Medicamentos <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 
@@ -141,7 +139,7 @@
             <div class="icon">
                 <i class="ion-home"></i>
             </div>
-            <a href="{{route('consultorio.index')}}" class="small-box-footer">Consultorios<i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('consultorio.index')}}" class="small-box-footer">Consultorios <i class="fa fa-arrow-circle-right"></i></a>
         </div>
     </div>
 

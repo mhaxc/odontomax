@@ -24,7 +24,8 @@
                           <th>ANIVERSARIO</th>
                           <th>ENDEREÇO</th>
                           <th>CPF</th>
-                         
+                          <th>Obs</th>
+
                           <th class="text-align-center">AÇOÊS</th>
                       </tr>
                       </thead>
@@ -41,7 +42,8 @@
                                           <td>{{$paciente->email}}</td>
                                           <td class="">{{ date( 'd/m/Y' ,strtotime($paciente->aniversario))}}</td>
                                           <td>{{$paciente->endereco}}</td>
-                                            <td>{{$paciente->cpf}}</td>
+                                            <td>{{$paciente->cpf}}
+                                          <td>{{$paciente->obs}}</td>
                                           <td>
       <a class="btn btn-info btn-sm glyphicon glyphicon-pencil" href="{{ route('paciente.edit',$paciente->id)}}">Editar</a>
 

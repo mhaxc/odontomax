@@ -35,6 +35,12 @@
             {{ Form::label('email', 'E-mail', array('class'=>'control-label')) }}
             {{ Form::text('email', null, array('placeholder'=>'Seu e-mail...', 'class'=>'form-control')) }}
         </div>
+
+        <div class="form-group form-group-lg">
+            {{ Form::label('aniversario', 'ANIVERSARIO', array('class'=>'control-label')) }}
+            {{ Form::text('aniversario', null, array('placeholder'=>'Seu ANIVERSARIO...', 'class'=>'form-control date')) }}
+        </div>
+
         <div class="form-group form-group-lg">
         {{ Form::label('endereco', 'Endereco', array('class'=>'control-label')) }}
         {{ Form::text('endereco', null, array('placeholder'=>'Seu endereco...', 'class'=>'form-control')) }}
