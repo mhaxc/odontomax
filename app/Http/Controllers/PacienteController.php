@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paciente;
+use events\ContarAdd;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -16,8 +17,8 @@ class PacienteController extends Controller
     {
 
         $pacientes = Paciente::latest()->paginate(10);
-        $conta_paciente = Paciente::all()->count($pacientes);
-        return view('paciente.index',compact('pacientes','conta_paciente'));
+
+        return view('paciente.index',compact('pacientes'));
 
 
     }
@@ -40,7 +41,7 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, array(
             'cpf'=>'required|min:11',
             'nome'=>'required',
             'endereco'=>'required',
@@ -48,9 +49,10 @@ class PacienteController extends Controller
             'email'=>'required|email',
             'obs'=>'required|max:15',
 
-        ]);
+        ));
 
         Paciente::create($request->all());
+
         return redirect(route('paciente.index'))->with('success','Adicionado  com Sucesso');
 
     }
@@ -107,9 +109,10 @@ class PacienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,$paciente)
     {
         Paciente::find($id)->delete();
+        event(new ContarAdd($paciente));
         return redirect(route('paciente.index'))->with('success','Deletado com  sucesso ');
     }
 }

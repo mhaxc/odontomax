@@ -8,24 +8,22 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
-    private $pacientes;
-    public function __construct(Paciente $pacientes)
-    {
+   /* private $pacientes;*/
 
-        $contar = Paciente::all()->count($pacientes);
-            return $contar;
+
+    public function __construct()
+    {
         $this->middleware('auth');
+        /*$conta_pacientes = Paciente::all()->count($pacientes);
+        return $conta_pacientes;*/
 
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        return view('home');
+        $conta_pacientes = Paciente::all()->count();
+        return view('home',compact('pacientes','conta_pacientes'));
     }
 
 

@@ -12,14 +12,16 @@
 <div class="box ">
     <div class="col-lg-3 col-6">
         <!-- small box -->
+
         <div class="small-box bg-green">
             <div class="inner">
 
 
-                <h3>2</h3>
+                <h3>{{$conta_pacientes}}</h3>
                 <h4>Pacientes</h4>
 
             </div>
+
             <div class="icon">
                 <i class="ion ion-person-add"></i>
             </div>
