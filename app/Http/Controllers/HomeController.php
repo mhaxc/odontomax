@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
 
-   /* private $pacientes;*/
+    /* private $pacientes;*/
 
 
     public function __construct()
@@ -22,9 +22,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        $conta_pacientes = Paciente::all()->count();
-        return view('home',compact('pacientes','conta_pacientes'));
+        $contagens = \DB::table('indicadores')->select('dentistas','pacientes')->get();
+
+        return view('home',compact('contagens'));
     }
+
+
 
 
 

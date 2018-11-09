@@ -17,7 +17,7 @@
             <div class="inner">
 
 
-                <h3>{{$conta_pacientes}}</h3>
+                <h3>{{ $contagens[0]->pacientes}}</h3>
                 <h4>Pacientes</h4>
 
             </div>
@@ -36,8 +36,7 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-yellow">
             <div class="inner">
-
-                <h3>10</h3>
+                <h3>{{ $contagens[0]->dentistas }}</h3>
 
                 <h4>Dentistas</h4>
 
