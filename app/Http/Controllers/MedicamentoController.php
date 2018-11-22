@@ -25,7 +25,7 @@ class MedicamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('medicamento.create');
     }
 
     /**
@@ -36,7 +36,17 @@ class MedicamentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, array(
+            'nome'=>'required',
+            'posologia'=>'required',
+
+
+
+        ));
+
+        Medicamento::create($request->all());
+
+        return redirect(route('medicamento.index'))->with('success','Adicionado  com Sucesso');
     }
 
     /**

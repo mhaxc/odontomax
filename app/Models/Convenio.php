@@ -8,10 +8,10 @@ class Convenio extends Model
 {
     protected $fillable =
 
-    [ 'nome','data','regiao'];
+        [ 'razao_social','codigo','nome','data'];
 
-public function consulta()
-{
-    return $this->hasMany(Consulta::class);
-}
+    public function consulta()
+    {
+        return $this->hasMany(Consulta::class);
+    }
 }

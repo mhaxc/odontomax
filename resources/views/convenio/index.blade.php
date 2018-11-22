@@ -25,9 +25,11 @@
 
             <tr>
                 <th>#</th>
+                <th>RAZAO SOCIAL</th>
+                <th>CODIGO</th>
                 <th>NOME</th>
                 <th>DATA</th>
-                <th>REGIÂO</th>
+
                
 
                 <th>AÇOÊS</th>
@@ -41,9 +43,11 @@
                 <div class="card body">
                 <tr>
                     <td>{{$convenio->id}}</td>
+                    <td>{{$convenio->razao_social}}</td>
+                    <td>{{$convenio->codigo}}</td>
                     <td>{{$convenio->nome}}</td>
                     <td>{{$convenio->data}}</td>
-                    <td>{{$convenio->regiao}}</td>
+
                 
                    
                 <td>

@@ -15,7 +15,7 @@ class CreateConsultasTable extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('data');
+            $table->date('data')->default(now());
             $table->time('horario_inicio');
             $table->time('horario_final');
             $table->string('tipo');

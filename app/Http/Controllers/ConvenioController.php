@@ -36,9 +36,11 @@ class ConvenioController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
+            'razao_social'=>'required',
+            'codigo'=>'required',
             'nome'=>'required',
             'data'=>'required',
-            'regiao'=>'required',
+
         
 
         ]);

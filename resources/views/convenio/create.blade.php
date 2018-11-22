@@ -21,21 +21,24 @@
         {{csrf_field()}}
 
     <div class="form-group form-group-lg">
+        {{ Form::label('razao_social', 'RAZAO SOCIAL', array('class'=>'control-label')) }}
+        {{ Form::text('razao_social', null, array('placeholder'=>'Nome  do Convenio...', 'class'=>'form-control')) }}
+    </div>
+    <div class="form-group form-group-lg">
+        {{ Form::label('codigo', 'CODIGO', array('class'=>'control-label')) }}
+        {{ Form::text('codigo', null, array('placeholder'=>'Nome  do Convenio...', 'class'=>'form-control')) }}
+    </div>
+
+    <div class="form-group form-group-lg">
         {{ Form::label('nome', 'NOME', array('class'=>'control-label')) }}
         {{ Form::text('nome', null, array('placeholder'=>'Nome  do Convenio...', 'class'=>'form-control')) }}
     </div>
+
 
     <div class="form-group form-group-lg">
         {{ Form::label('data', 'DATA', array('class'=>'control-label')) }}
         {{ Form::text('data', null, array('placeholder'=>'Seu a  data da  nome  do convenio...', 'class'=>'form-control date')) }}
     </div>
-
-    <div class="form-group form-group-lg">
-        {{ Form::label('regiao', 'REGIÃO', array('class'=>'control-label')) }}
-        {{ Form::text('regiao', null, array('placeholder'=>'Regiao do Convenio..', 'class'=>'form-control')) }}
-    </div>
-
-
 
     
 

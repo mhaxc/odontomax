@@ -18,5 +18,12 @@ class Agenda extends Model
     {
         return $this->belongsTo(Dentista::class);
     }
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'data'
+    ];
+
+    protected $dateFormat = 'Y-m-d H:i:s';
 
 }

@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Consulta;
 use App\Models\Dentista;
 use App\Models\Paciente;
+use App\Observers\ConsultaObserver;
 use App\Observers\DentistaObserver;
 use App\Observers\PacienteObserver;
 use Illuminate\Support\Facades\Schema;
@@ -21,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
          Paciente::observe(PacienteObserver::class);
          Dentista::observe(DentistaObserver::class);
+         Consulta::observe(ConsultaObserver::class);
     }
 
     /**

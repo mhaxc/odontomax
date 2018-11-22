@@ -8,8 +8,8 @@ class DentistaObserver
 {
     public function created(Dentista $dentista)
     {
-        \DB::table('indicadores')->increment('dentistas');
 
+           \DB::table('indicadores')->increment('dentistas');
     }
 
     public function deleted(Dentista $dentista)

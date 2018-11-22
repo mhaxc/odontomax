@@ -49,12 +49,14 @@ class ConsultaController extends Controller
     public function store(Request $request,Convenio $convenios )
     {
         $this->validate($request,[
-            'data'=>'required',
+            'data'=>'required ',
             'horario_inicio'=>'required',
             'horario_final'=>'required',
             'tipo'=>'required',
 
         ]);
+       
+       
         Consulta::create($request->all());
 
         return redirect(route('consulta.index'))->with('success','Marcado com sucesso  com Sucesso');

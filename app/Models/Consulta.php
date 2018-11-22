@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consulta extends Model
 {
-    protected $fillable =['data','horario_inicio','horario_final','tipo','dentista_id','paciente_id','convenio_id'];
+    protected $fillable =['horario_inicio','horario_final','tipo','dentista_id','paciente_id','convenio_id'];
 
 
     public function dentistas()
@@ -24,6 +24,13 @@ class Consulta extends Model
         return $this->belongsTo(Convenio::class);
     }
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'data'
+    ];
+
+    protected $dateFormat = 'Y-m-d H:i:s';
 
 }
 
